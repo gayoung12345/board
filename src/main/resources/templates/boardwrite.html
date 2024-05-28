@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>보드 작성 폼</title>
+    <style>
+        .layout{
+        width:800px;
+        margin:0 auto;
+        }
+        .layout input {
+        width: 100%;
+        box-sizing: boarder-box
+        }
+        .layout textarea {
+        width:100%;
+        margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <h1>Board Write</h1>
+    <form method="post" th:action="@{/board/writeProc}">
+        <!-- title -->
+        <div>
+            <label for="title" class="form-label">제목</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <!-- content -->
+        <div>
+            <label for="content">내용</label>
+            <textarea id="content" name="content" rows="10"></textarea>
+        </div>
+        <!-- submit btn -->
+        <input type="submit" value="저장" style="width:30%; text-align:center;">
+    </form>
+</div>
+</body>
+</html>
