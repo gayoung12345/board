@@ -11,17 +11,21 @@ import spring.boot.board.service.BoardService;
 @RequestMapping("/board")
 @RequiredArgsConstructor
 @Controller
-public class BoardController {
+public class BoardController { // Controller: 데이터와 UI를 연결하는 역할
 
     @Autowired
     private final BoardService boardService;
 
+    // http://local:8080/board/hello
+    // 화면에 "Hello Spring Boot" 출력
     @GetMapping("/hello")
-    @ResponseBody
+    @ResponseBody   // return 값 그대로 반환
     public String hello() {
-        return "Hello Spring Boot";
+        return "Hello Spring Boot"; // 화면에 출력
     }
 
+    // http://local:8080/board/write
+    // board table에 값을 저장
     @GetMapping("/write")
     public String boardWriteForm(Model model, @RequestParam(value = "id", required = false) Integer id) {
         if (id != null) {

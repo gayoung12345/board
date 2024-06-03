@@ -40,7 +40,6 @@ public class BoardService {
         }
     }
 
-    // 특정 게시글 삭제하기
     public void boardDelete(Integer id){
         boardRepository.deleteById(id);
     }
